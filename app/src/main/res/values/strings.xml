@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">mic</string>
+    <string name="saltar">Saltar</string>
+    <string name="present_1">Presentation 1</string>
+    <string name="present_2">Presentation_2</string>
+    <string name="present_3">Presentation_3</string>
+    <string name="lecciones">Lecciones</string>
+    <string name="estadisticas">Estadísticas</string>
+    <string name="libros">Libros</string>
+    <string name="perfil">Perfil</string>
+    <string name="leccion1">Lección1</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="configuracion_sonido">Sonido</string>
+    <string name="configuracion_sonido_description">Habilitar Sonido de la aplicación</string>
+    <string name="configuracion_apariencia">Apariencia</string>
+    <string name="configuracion_apariencia_description">Cambiar entre modos de visualización</string>
+
+    <string name="acercade_mic">MIC 1.0.0</string>
+    <string name="acercade_mic_total">Metodologia de la investigación científica</string>
+    <string name="acercade_mic_description">
+        Esta aplicación está dirigida a los estudiantes universitarios con el fin de proveerles los conocimientos necesarios sobre la metodologia de la investigación científica  para el desarrollo de su tesis
+    </string>
+    <string name="acercade_mic_contacto">Contacto:</string>
+    <string name="acercade_mic_correo"><a href="micapk2022@gmail.com">micapk2022@gmail.com</a></string>
+</resources>
