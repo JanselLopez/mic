@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="80dp"
+    android:layout_height="wrap_content" android:padding="5dp" android:gravity="center_horizontal">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/autor_img"
+        android:layout_width="40dp"
+        android:background="@drawable/fondo_radius"
+        android:clipToOutline="true"
+        android:layout_height="40dp"
+        android:src="@drawable/estrella"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/autor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        style="@style/acerca_de_text"
+        android:textSize="11dp"
+        android:text="Adams G"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/autor_cargo"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/acerca_de_text"
+        android:alpha="0.6"
+        android:textSize="11dp"
+        android:text="Executive Officer"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

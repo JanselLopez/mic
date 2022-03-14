@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".classes.ClassActivity"
+    android:background="@color/colorDarkBlue"
+    android:id="@+id/coordinator_class"
+    >
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_gravity="center"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:onClick="goBack"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </androidx.appcompat.widget.AppCompatImageButton>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_in_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:paddingTop="20dp"
+            android:gravity="center_horizontal"
+            android:textSize="24dp"
+            android:textColor="@color/colorBond"
+            ></androidx.appcompat.widget.AppCompatTextView>
+        <View
+            android:id="@+id/separator_title"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorBond"
+            app:layout_constraintTop_toBottomOf="@+id/tv_descripcion"
+            android:layout_marginHorizontal="20dp"
+            android:elevation="1dp"
+            android:alpha="0.2"
+            ></View>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_margin="10dp"
+            android:id="@+id/tv_context_in_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Content for the Class"
+            android:textSize="16dp"
+            android:textColor="@color/colorBond"
+            >
+        </androidx.appcompat.widget.AppCompatTextView>
+        <View
+            android:id="@+id/separator_question"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorBond"
+            app:layout_constraintTop_toBottomOf="@+id/tv_descripcion"
+            android:layout_marginHorizontal="20dp"
+            android:elevation="1dp"
+            android:alpha="0.2"
+            ></View>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_margin="10dp"
+            android:id="@+id/tv_question_in_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question"
+            android:textSize="16dp"
+
+            android:textColor="@color/colorBond"
+            >
+        </androidx.appcompat.widget.AppCompatTextView>
+        <RadioGroup
+            android:id="@+id/rg_question_in_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:paddingBottom="50dp"
+            >
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rb_false_in_class"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="@string/_false"
+                android:textColor="@color/colorBond"
+                >
+            </androidx.appcompat.widget.AppCompatRadioButton>
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rb_true_in_class"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="@string/_true"
+                android:textColor="@color/colorBond"
+                ></androidx.appcompat.widget.AppCompatRadioButton>
+        </RadioGroup>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_gavel_black_24dp"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="10dp"
+        android:onClick="checkAnswer"
+        ></com.google.android.material.floatingactionbutton.FloatingActionButton>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

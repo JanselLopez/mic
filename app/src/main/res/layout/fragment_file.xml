@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorDarkBlue"
+    android:orientation="vertical"
+    android:padding="5dp"
     tools:context=".fragments.sections_fragments.FileFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <cu.gd.mic.widget.FileClass
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-</FrameLayout>
+        android:layout_height="wrap_content"
+        app:ftitle="EL PROCESO DE INVESTIGACIÓN CIENTÍFICA"
+        app:author="Rolando Alfredo Hernández León y Sayda Coello González"
+        app:size="872 Kb"
+        app:url="https://mega.nz/file/hmYCwLLA#LpvhgcMXB48kV08YdIlmtv3SFb_ibCV-ZRX25JGv2GQ"/>
+    <cu.gd.mic.widget.FileClass
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ftitle="METODOLOGÍA DE LA INVESTIGACIÓN"
+        app:author="Hernández Sampieri"
+        app:size="2.2 Mb"
+        app:url="https://mega.nz/file/53xCnYRS#vZ3k-s8g3PUJKtbTMWx8Tc1dY8ZLzyGGjhiyXvcM3jw"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

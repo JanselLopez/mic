@@ -1,7 +1,6 @@
 package cu.gd.mic.fragments.sections_fragments
 
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,9 +13,7 @@ import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import android.graphics.Color
-import android.graphics.drawable.GradientDrawable
 import com.github.mikephil.charting.components.Description
-import com.github.mikephil.charting.components.Legend
 
 
 class StadisticFragment : Fragment() {
@@ -30,16 +27,29 @@ class StadisticFragment : Fragment() {
         // Inflate the layout for this fragment
         val v =inflater.inflate(R.layout.fragment_stadistic, container, false)
         pieChart = v.findViewById(R.id.pieChart_view)
-        showPieChart()
+        showWithPreference()
         return v
     }
-    private fun showPieChart() {
+
+    override fun onResume() {
+        super.onResume()
+        showWithPreference()
+    }
+
+    private fun showWithPreference(){
+        val preferences = this.activity!!.getSharedPreferences("Results",Context.MODE_PRIVATE)
+        val corrects = preferences.getInt("corrects",0)
+        val incorrects = preferences.getInt("incorrects",0)
+        showPieChart(corrects,incorrects)
+    }
+
+    private fun showPieChart(corrects:Int,incorrects:Int) {
         val pieEntries = mutableListOf<PieEntry>()
         val label = "Respuestas"
         //initializing data
         val typeAmountMap = hashMapOf<String,Int>()
-        typeAmountMap["Incorrectas"] = 10
-        typeAmountMap["Correctas"] = 72
+        typeAmountMap["Incorrectas"] = incorrects
+        typeAmountMap["Correctas"] = corrects
         typeAmountMap["Sin realizar"] = 45
         //initializing colors for the entries
         val colors = mutableListOf<Int>()
@@ -72,7 +82,6 @@ class StadisticFragment : Fragment() {
         pieChart!!.description = description
         pieChart!!.legend.textColor =Color.parseColor("#F4F4F8")
         pieChart!!.legend.textSize =14f
-        pieChart!!.legend.orientation = Legend.LegendOrientation.VERTICAL
         pieChart!!.data = pieData
         pieChart!!.invalidate()
     }

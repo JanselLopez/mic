@@ -20,15 +20,10 @@ public class AcercaDe extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acerca_de);
-        tv1 = findViewById(R.id.acerca_de_link);
-        tv1.setMovementMethod(LinkMovementMethod.getInstance());
-        tv1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_SENDTO);
-                i.setData(Uri.parse("mailto:micapk2022@gmail.com?subject=Lo contacto por"));
-                startActivity(i);
-            }
-        });
+    }
+    public void showGmail(View v){
+        Intent i = new Intent(Intent.ACTION_SENDTO);
+        i.setData(Uri.parse("mailto:micapk2022@gmail.com"));
+        startActivity(i);
     }
 }

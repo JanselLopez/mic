@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cu.gd.mic">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
+        android:name="cu.gd.mic.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".principal_activity.AcercaDe"></activity>
+        <activity android:name=".classes.ClassActivity"></activity>
+
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="mic.db" />
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="AA_MODELS"
+            android:value="cu.gd.mic.model.Capitulo, cu.gd.mic.model.Leccion, , cu.gd.mic.model.Pregunta" />
+
+        <activity android:name=".principal_activity.AcercaDe" />
         <activity android:name=".principal_activity.PrincipalMenuActivity" />
         <activity android:name=".principal_activity.ConfigurationActivity" />
         <activity android:name=".MainActivity">

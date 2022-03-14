@@ -4,14 +4,20 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
+import com.activeandroid.query.Select
+import com.google.android.material.snackbar.Snackbar
 import cu.gd.mic.adapters.PresentationPageAdapter
 import cu.gd.mic.fragments.presentation_fragments.FirstPresentationPage
 import cu.gd.mic.fragments.presentation_fragments.SecondPresentationPage
 import cu.gd.mic.fragments.presentation_fragments.ThirdPresentationPage
+import cu.gd.mic.model.Capitulo
+import cu.gd.mic.model.Leccion
 import cu.gd.mic.principal_activity.PrincipalMenuActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     private lateinit var vpPresent:ViewPager
@@ -60,5 +66,4 @@ class MainActivity : AppCompatActivity() {
         var intent = Intent(this, PrincipalMenuActivity::class.java)
         startActivity(intent)
     }
-
 }

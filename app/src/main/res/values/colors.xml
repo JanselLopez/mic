@@ -9,4 +9,5 @@
     <color name="colorBottomBar">#707070</color>
     <color name="colorTabMenuIcon">#E6E6E9</color>
     <color name="colorTextLections">#E87C34</color>
+    <color name="colorCardView">#BF202735</color>
 </resources>

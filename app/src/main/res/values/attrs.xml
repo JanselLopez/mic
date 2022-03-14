@@ -5,4 +5,16 @@
         <attr name="description" format="string"/>
         <attr name="state" format="boolean"/>
     </declare-styleable>
+    <declare-styleable name="Autor">
+        <attr name="img" format="integer"/>
+        <attr name="nombre" format="string"/>
+        <attr name="cargo" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="FileClass">
+        <attr name="ftitle" format="string"/>
+        <attr name="url" format="string"/>
+        <attr name="author" format="string"/>
+        <attr name="size" format="string"/>
+    </declare-styleable>
 </resources>

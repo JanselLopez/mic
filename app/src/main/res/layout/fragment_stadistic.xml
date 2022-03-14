@@ -14,6 +14,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></com.github.mikephil.charting.charts.PieChart>
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="10dp"
+        ></com.github.mikephil.charting.charts.PieChart>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

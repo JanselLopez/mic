@@ -1,7 +1,11 @@
 package cu.gd.mic.principal_activity
 
 
+import android.Manifest
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,22 +17,34 @@ import cu.gd.mic.fragments.sections_fragments.LectionsFragment
 import cu.gd.mic.fragments.sections_fragments.ProfileFragment
 import cu.gd.mic.fragments.sections_fragments.StadisticFragment
 import android.graphics.PorterDuff
+import android.os.Build
 import android.view.View
 import android.widget.ImageButton
+import android.widget.TextView
+import android.widget.Toast
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
+import com.activeandroid.query.Select
+import com.google.android.material.snackbar.Snackbar
 import cu.gd.mic.R
+import cu.gd.mic.model.Capitulo
+import cu.gd.mic.model.Leccion
 
 
 class PrincipalMenuActivity : AppCompatActivity() {
     private lateinit var tabLayout:TabLayout
     private lateinit var vpSections:ViewPager
     private lateinit var imageBtn: ImageButton
+    private lateinit var tvPuntuacion:TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal_menu)
         tabLayout = findViewById(R.id.tl_menu)
         vpSections = findViewById(R.id.vp_sections)
         imageBtn=findViewById(R.id.configurationBtn)
+        tvPuntuacion = findViewById(R.id.tv_puntuation)
+        showPuntation()
         setUpSectionViewPager()
 
         tabLayout.setOnTabSelectedListener(object :
@@ -77,5 +93,25 @@ class PrincipalMenuActivity : AppCompatActivity() {
         val intent = Intent(this, ConfigurationActivity::class.java)
         startActivity(intent)
 
+    }
+
+    fun showPuntation(){
+        val preferences = getSharedPreferences("Results",Context.MODE_PRIVATE)
+        val corrects = preferences.getInt("corrects",0)
+        val incorrects = preferences.getInt("incorrects",0)
+        tvPuntuacion.text = (corrects-incorrects).toString()
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        showPuntation()
+        if (Build.VERSION.SDK_INT >= 23) {
+            val hw = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            if (hw != PackageManager.PERMISSION_GRANTED) {
+                var array = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                requestPermissions(array,205)
+            }
+        }
     }
 }
